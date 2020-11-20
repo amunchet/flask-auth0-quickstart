@@ -4,4 +4,6 @@ services:
         build: "%%project_name%%"
         ports:
             - "%%exposed_port%%:7000"
+        volumes:
+            - ./%%project_name%%/:/src
             
