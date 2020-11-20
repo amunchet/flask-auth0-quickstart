@@ -1,2 +1,9 @@
 flask
+flask-cors
 gunicorn
+python-dotenv
+
+# Development tools
+pytest
+pytest-cov
+requests
