@@ -22,6 +22,8 @@ There are some basic tests to make sure the URLs are protected.
 1.  `cd /src/`
 2.  `pytest`
 
+When writing further test, take a look at `common/test.py` for the `unwrap` function.  That will allow you to test functions that are wrapped in the security decorator.  Syntax is `unwrap(wrapped_function)(function_arguments)`
+
 ## Typical Next Steps
 This project is meant to be a starting point.  From here, a typical workflow could look at follows.
 
