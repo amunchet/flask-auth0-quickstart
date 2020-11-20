@@ -26,12 +26,12 @@ CORS(app)
 
 @app.route("/insecure")
 def insecure():
-    returns "Insecure route.", 200
+    return "Insecure route.", 200
 
 @app.route("/secure")
 @requires_auth_read
 def secure():
-    returns "Secure route.", 200
+    return "Secure route.", 200
 
 
 if __name__ == "__main__": # Run the Flask server in development mode
