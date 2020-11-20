@@ -4,10 +4,11 @@ Sample Flask app
 """
 # Permissions scope names
 import functools
+import os
 
 from common import auth
 from flask import Flask, request
-from flask_cors import Cors
+from flask_cors import CORS
 
 PERM_READ = "read"
 PERM_WRITE = "write"
