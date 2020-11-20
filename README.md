@@ -17,9 +17,19 @@ This is a simple project to quickstart a project using Flask (Python), Docker, a
 ## Tests
 There are some basic tests to make sure the URLs are protected.  
 
+**These must be run in the created docker**
+
+1.  `cd /src/`
+2.  `pytest`
 
 ## Typical Next Steps
-Moving the snippet out, etc. 
+This project is meant to be a starting point.  From here, a typical workflow could look at follows.
+
+1.  `mv [PROJECT NAME] ..`
+2.  `cat docker-compose.yml >> ../docker-compose.yml`
+3.  `cd .. && rm -rf flask-auth0-quickstart`
+
+
 
 ## Trying out the authentication
 To try out the authentication, you will need your Authorization Header from an already authenticated request.  Copy that (it should begin wtih "Bearer ...")
@@ -32,3 +42,9 @@ To try out the authentication, you will need your Authorization Header from an a
 If you have a problem, check to make sure your Auth0 permissions are configured correctly for your user.
 
 ## Design Notes
+
+The simple Flask application in `serve.py` is meant as a starting point.  
+
+Permissions are defined at the top of the file.
+
+From there, use the definied wrappers on flask routes.  Two examples are given, with and without a wrapper.
