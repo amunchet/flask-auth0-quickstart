@@ -95,8 +95,8 @@ if __name__ == "__main__":
         auth_config["audience"] = input().strip()
 
         with open(auth_config_file, "w") as f:
-            f.write("""AUTH0DOMAIN={}""".format(auth_config['domain']))
-            f.write("""APIURL={}""".format(auth_config['audience']))
+            f.write("""AUTH0DOMAIN={}\n""".format(auth_config['domain']))
+            f.write("""APIURL={}\n""".format(auth_config['audience']))
 
 
     clear()
