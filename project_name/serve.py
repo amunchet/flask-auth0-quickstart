@@ -9,14 +9,14 @@ from common import auth
 from flask import Flask, request
 from flask_cors import Cors
 
-PERM_READ = "read:XXXX"
-PERM_WRITE = "write:XXXX"
-PERM_ADMIN = "reports:XXXX"
+PERM_READ = "read"
+PERM_WRITE = "write"
+PERM_ADMIN = "reports"
 
 
 requires_auth_read = functools.partial(auth._requires_auth, permission=PERM_READ)
 requires_auth_write = functools.partial(auth._requires_auth, permission=PERM_WRITE)
-requires_auth_admin = functools.partial(auth._requires_auth, permission=PERM_ADMIN
+requires_auth_admin = functools.partial(auth._requires_auth, permission=PERM_ADMIN)
 
 app = Flask(__name__)
 CORS(app)
