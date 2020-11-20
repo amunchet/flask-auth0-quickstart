@@ -9,9 +9,20 @@ from flask import request, _request_ctx_stack
 import inspect
 from jose import jwt
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 # Auth specific - may abstract out, but no point currently
-AUTH0_DOMAIN = "XXAUTH0DOMAINXX"
-API_IDENTIFIER = "XXAPIIDENTIFIERXX"
+AUTH0_DOMAIN = os.getenv("AUTH0DOMAIN")
+API_IDENTIFIER = os.getenv("APIURL")
+
+if AUTH0_DOMAIN == "" or AUTH0_DOMAIN == None:
+    raise Exception("No Auth0 Domain specified.  Please make sure your .env is correct")
+
+
+if API_IDENTIFIER == "" or API_IDENTIFIER == None:
+    raise Exception("No Auth0 API URL specified.  Please make sure your .env is correct")
 
 ALGORITHMS = ["RS256"]
 
