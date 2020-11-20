@@ -7,11 +7,16 @@ This is a simple project to quickstart a project using Flask (Python), Docker, a
 
 
 ## Setup Instructions
-0.  Clone this repository `git clone`
+0.  Clone this repository `git clone https://github.com/amunchet/flask-auth0-quickstart.git`
+1.  `cd flask-auth0-quickstart`
+2.  `./setup.py` (or `python setup.py`)
+3.  Follow the instructions.
+4.  Enjoy!
 
 
 ## Tests
 There are some basic tests to make sure the URLs are protected.  
+
 
 ## Typical Next Steps
 Moving the snippet out, etc. 
