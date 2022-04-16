@@ -14,10 +14,16 @@ PERM_READ = "read"
 PERM_WRITE = "write"
 PERM_ADMIN = "reports"
 
+def error_func(code=401, **args): # pragma: no cover
+    if isinstance(code, int):
+        return "Auth Error", code
+    return "Auth Error", 500
 
-requires_auth_read = functools.partial(auth._requires_auth, permission=PERM_READ)
-requires_auth_write = functools.partial(auth._requires_auth, permission=PERM_WRITE)
-requires_auth_admin = functools.partial(auth._requires_auth, permission=PERM_ADMIN)
+
+
+requires_auth_read = functools.partial(auth._requires_auth, permission=PERM_READ, error_func=error_func)
+requires_auth_write = functools.partial(auth._requires_auth, permission=PERM_WRITE, error_func=error_func)
+requires_auth_admin = functools.partial(auth._requires_auth, permission=PERM_ADMIN, error_func=error_func)
 
 app = Flask(__name__)
 CORS(app)
